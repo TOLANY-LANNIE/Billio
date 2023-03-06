@@ -1,8 +1,8 @@
-package com.thulani.billio.database
+package com.thulani.billio.data.dao
 
 import androidx.room.*
-import com.thulani.billio.entities.Bills
-import com.thulani.billio.entities.Budget
+import com.thulani.billio.data.entities.Bills
+import com.thulani.billio.data.entities.Budget
 
 @Dao
 interface BudgetDao {

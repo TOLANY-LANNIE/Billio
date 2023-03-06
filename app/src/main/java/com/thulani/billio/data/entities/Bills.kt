@@ -1,4 +1,4 @@
-package com.thulani.billio.entities
+package com.thulani.billio.data.entities
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

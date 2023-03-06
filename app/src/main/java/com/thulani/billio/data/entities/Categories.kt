@@ -1,10 +1,9 @@
-package com.thulani.billio.entities
+package com.thulani.billio.data.entities
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.Date
 
 @Entity(tableName = "categories_table")
 data class Categories(

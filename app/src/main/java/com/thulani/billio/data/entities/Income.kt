@@ -1,4 +1,4 @@
-package com.thulani.billio.entities
+package com.thulani.billio.data.entities
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
@@ -7,11 +7,10 @@ import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity(tableName = "income_table")
-data class Transactions(
+data class Income(
     @PrimaryKey @ColumnInfo(name ="uid")val bid: Int,
-    @NonNull @ColumnInfo(name = "cid") val id: String,
+    @NonNull @ColumnInfo(name = "income_name") val name: String,
     @NonNull @ColumnInfo(name = "amount") val amount: Double,
     @NonNull @ColumnInfo(name = "date") val date: Date,
-    @NonNull @ColumnInfo(name = "type") val type: String,
     @NonNull @ColumnInfo(name = "user_id") val uid: String
 )
