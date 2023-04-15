@@ -7,20 +7,18 @@ import com.thulani.billio.data.entities.User
 
 @Dao
 interface UserDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE )
-    suspend fun upsert(user: User)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun upsert(user: User)
 
     @Delete
-    suspend fun delete(user: User)
+    fun delete(user: User)
 
-    @Query("SELECT * FROM users_table")
+    @Query("SELECT * FROM users_table ORDER BY uid DESC")
     fun getAll(): LiveData<List<User>>
 
     @Query("SELECT * FROM users_table" +
             " WHERE email LIKE:userEmail " +
             "AND password LIKE:userPassword")
-    fun login(userEmail: String,userPassword:String): User
-
-
+    fun login(userEmail: String,userPassword:String): User?
 
 }

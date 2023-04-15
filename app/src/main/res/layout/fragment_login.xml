@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.login.LoginFragment">
+    tools:context=".fragments.auth.LoginFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,16 @@
             android:layout_width="282dp"
             android:layout_height="302dp"
             android:layout_gravity="center"
-            android:src="@drawable/youth" />
+            android:src="@drawable/loginpic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="@string/slogan"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:paddingBottom="16dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameTextField"
@@ -28,6 +37,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -51,7 +61,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLogin"
             android:textSize="20dp"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/teal_200"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?attr/materialButtonOutlinedStyle"
@@ -60,7 +70,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonCreateAcc"
             android:textSize="20dp"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/teal_200"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?attr/materialButtonOutlinedStyle"
