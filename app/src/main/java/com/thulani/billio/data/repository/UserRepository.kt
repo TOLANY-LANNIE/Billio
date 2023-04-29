@@ -13,6 +13,8 @@ class UserRepository(
 
     fun getAllUsers() = database.getUserDao().getAll()
 
-    fun login(userEmail: String, userPassword: String) =
-        database.getUserDao().login(userEmail, userPassword)
+    suspend fun login(userEmail: String, userPassword: String):User?{
+        return database.getUserDao().login(userEmail, userPassword)
+    }
+
 }

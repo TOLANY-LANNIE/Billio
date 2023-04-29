@@ -1,6 +1,8 @@
 package com.thulani.billio.fragments.auth
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +11,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.thulani.billio.R
+import com.thulani.billio.TestActivity
 import com.thulani.billio.data.BillioDB
+import com.thulani.billio.data.entities.User
 import com.thulani.billio.data.repository.UserRepository
 import com.thulani.billio.databinding.FragmentLoginBinding
 
@@ -40,6 +44,23 @@ class LoginFragment: Fragment() {
             if(email.isEmpty()||password.isEmpty()){
                 Toast.makeText(context,"Fill all fields", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
+            }else{
+               viewModel.login(email,password)
+                val user = viewModel.userDetails
+                if (user != null) {
+                    Log.i("Billio Login Fragment", user.name)
+                    requireActivity().run {
+                        val intent= Intent(this, TestActivity::class.java)
+                        intent.putExtra("name",user.name)
+                        intent.putExtra("email",user.email)
+                        intent.putExtra("surname",user.surname)
+                        startActivity(intent)
+                        finish()
+                    }
+                }else{
+                    Toast.makeText(context,"Wrong Email Address or Password", Toast.LENGTH_LONG).show()
+                    //binding.usernameTextField.text
+                }
             }
         }
 
