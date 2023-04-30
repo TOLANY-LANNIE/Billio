@@ -21,8 +21,6 @@ import com.thulani.billio.databinding.FragmentLoginBinding
 class LoginFragment: Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    lateinit var  textUsername:EditText
-    lateinit var textPassword:EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,7 +57,8 @@ class LoginFragment: Fragment() {
                     }
                 }else{
                     Toast.makeText(context,"Wrong Email Address or Password", Toast.LENGTH_LONG).show()
-                    //binding.usernameTextField.text
+                    binding.usernameTextField.editText?.setText("")
+                    binding.passwordTextField.editText?.setText("")
                 }
             }
         }
