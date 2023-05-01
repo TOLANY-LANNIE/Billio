@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.thulani.billio.BillioActivity
 import com.thulani.billio.R
 import com.thulani.billio.TestActivity
 import com.thulani.billio.data.BillioDB
@@ -48,7 +49,7 @@ class LoginFragment: Fragment() {
                 if (user != null) {
                     Log.i("Billio Login Fragment", user.name)
                     requireActivity().run {
-                        val intent= Intent(this, TestActivity::class.java)
+                        val intent= Intent(this, BillioActivity::class.java)
                         intent.putExtra("name",user.name)
                         intent.putExtra("email",user.email)
                         intent.putExtra("surname",user.surname)

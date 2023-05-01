@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment
 import com.thulani.billio.fragments.auth.LoginFragment
 import com.thulani.billio.fragments.auth.SignUpFragment
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_auth)
 
         val signUp = SignUpFragment()
         val login = LoginFragment()
