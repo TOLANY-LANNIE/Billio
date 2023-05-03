@@ -46,7 +46,7 @@ class LoginFragment: Fragment() {
             }else{
                viewModel.login(email,password)
                 val user = viewModel.userDetails
-                if (user != null) {
+                if (user != null&& user.email==email && user.password ==password) {
                     Log.i("Billio Login Fragment", user.name)
                     requireActivity().run {
                         val intent= Intent(this, BillioActivity::class.java)
