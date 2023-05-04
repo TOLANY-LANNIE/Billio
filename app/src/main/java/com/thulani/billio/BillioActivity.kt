@@ -1,6 +1,8 @@
 package com.thulani.billio
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,61 +28,17 @@ class BillioActivity : AppCompatActivity() {
         val report = ReportFragment()
         val profile = ProfileFragment()
 
-        replaceFragment(profile)
-        NavigationBarView.OnItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.home -> {
-                    // Respond to navigation item 1 click
-                    replaceFragment(home)
-                    true
-                }
-                R.id.calendar -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(calendar)
-                    true
-                }
-                R.id.balance -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(balance)
-                    true
-                }
-                R.id.report -> {
-                    replaceFragment(report)
-                    // Respond to navigation item 2 click
-                    true
-                }
-                R.id.profile -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(profile)
-                    true
-                }
-                else -> false
-            }
-        }
+        replaceFragment(home)
+        bottomNavigation.setOnNavigationItemSelectedListener{
+            when(it.itemId){
+                R.id.home -> replaceFragment(home)
+                R.id.calendar -> replaceFragment(calendar)
+                R.id.balance -> replaceFragment(balance)
+                R.id.report -> replaceFragment(report)
+                R.id.profile -> replaceFragment(profile)
 
-        bottomNavigation.setOnItemReselectedListener { item ->
-            when(item.itemId) {
-                R.id.home -> {
-                    // Respond to navigation item 1 click
-                    replaceFragment(home)
-                }
-                R.id.calendar -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(calendar)
-                }
-                R.id.balance -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(balance)
-                }
-                R.id.report -> {
-                    replaceFragment(report)
-                    // Respond to navigation item 2 click
-                }
-                R.id.profile -> {
-                    // Respond to navigation item 2 click
-                    replaceFragment(profile)
-                }
             }
+            true
         }
 
     }
