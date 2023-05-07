@@ -10,5 +10,5 @@ data class Categories(
     @PrimaryKey @ColumnInfo(name ="cid")val id: Int,
     @NonNull @ColumnInfo(name = "category_name") val name: String,
     @NonNull @ColumnInfo(name = "category_budget") val amount: Double,
-    @NonNull @ColumnInfo(name = "user_id") val uid: String
+    @NonNull @ColumnInfo(name = "uEmail") val uEmail: String
 )

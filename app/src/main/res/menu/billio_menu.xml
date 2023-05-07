@@ -5,29 +5,39 @@
         android:id="@+id/home"
         android:title="@string/home"
         android:enabled="true"
+        android:checkable="true"
+        android:checked="true"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_home_24" />
     <item
         android:id="@+id/calendar"
         android:title="@string/calendar"
         android:enabled="true"
+        android:checkable="true"
+        android:checked="true"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_calendar_month_24"/>
     <item
         android:id="@+id/balance"
         android:title="@string/balance"
+        android:checkable="true"
+        android:checked="true"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_payment_24"/>
 
     <item
         android:id="@+id/report"
         android:title="@string/report"
+        android:checkable="true"
+        android:checked="true"
         android:enabled="true"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_payments_24"/>
     <item
         android:id="@+id/profile"
         android:title="@string/my_profile"
+        android:checkable="true"
+        android:checked="true"
         android:enabled="true"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_baseline_person_24"/>
