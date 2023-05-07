@@ -13,5 +13,6 @@ data class Bills(
     @NonNull @ColumnInfo(name = "amount") val amount: Double,
     @NonNull @ColumnInfo(name = "due_date") val date: Date,
     @NonNull @ColumnInfo(name = "status") val status: String,
+    @NonNull @ColumnInfo(name = "category") val category: String,
     @NonNull @ColumnInfo(name = "user_id") val uid: String
 )

@@ -4,17 +4,24 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.thulani.billio.data.dao.CategoriesDao
 import com.thulani.billio.data.dao.UserDao
+import com.thulani.billio.data.entities.Categories
 import com.thulani.billio.data.entities.User
 
 
 @Database(
-    entities = [User::class],
-    version = 1
+    entities = [User::class,Categories::class],
+    version = 2
 )
 abstract class BillioDB :RoomDatabase(){
 
+    //users
     abstract fun getUserDao(): UserDao
+
+    //categories
+    abstract fun getCategoriesDao():CategoriesDao
+
 
     companion object {
         @Volatile

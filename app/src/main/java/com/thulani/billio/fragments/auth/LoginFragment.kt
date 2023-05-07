@@ -17,11 +17,14 @@ import com.thulani.billio.data.BillioDB
 import com.thulani.billio.data.entities.User
 import com.thulani.billio.data.repository.UserRepository
 import com.thulani.billio.databinding.FragmentLoginBinding
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.kodein
 
 
-class LoginFragment: Fragment() {
+class LoginFragment: Fragment(){
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
