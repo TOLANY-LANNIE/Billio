@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.thulani.billio.R
+import com.thulani.billio.data.BillioDB
+import com.thulani.billio.data.repository.CategoryRepository
+import com.thulani.billio.data.repository.UserRepository
 import com.thulani.billio.databinding.FragmentCategoriesBinding
+import com.thulani.billio.fragments.auth.UserViewModel
+import com.thulani.billio.fragments.auth.UserViewModelFactory
 
 class CategoriesFragment : Fragment() {
     private var _binding: FragmentCategoriesBinding? = null
@@ -18,6 +24,12 @@ class CategoriesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
+
+        val application= requireNotNull(this.activity).application
+        val database = BillioDB.invoke(application)
+        val repository = CategoryRepository(database)
+        val factory = CategoriesViewModelFactory(repository )
+        val viewModel = ViewModelProvider(this,factory)[CategoriesViewModel::class.java]
 
         return binding.root
     }
