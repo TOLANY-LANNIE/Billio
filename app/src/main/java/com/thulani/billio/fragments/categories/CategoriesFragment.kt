@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.thulani.billio.R
+import com.thulani.billio.adapters.CategoryAdapter
 import com.thulani.billio.data.BillioDB
 import com.thulani.billio.data.repository.CategoryRepository
 import com.thulani.billio.data.repository.UserRepository
@@ -31,6 +33,17 @@ class CategoriesFragment : Fragment() {
         val factory = CategoriesViewModelFactory(repository )
         val viewModel = ViewModelProvider(this,factory)[CategoriesViewModel::class.java]
 
+
+        val categoryAdapter = CategoryAdapter(listOf(),viewModel)
+
+        binding.categoryListRV.layoutManager =LinearLayoutManager(activity)
+        binding.categoryListRV.adapter = categoryAdapter
+
+
+
+        binding.categoryFab.setOnClickListener {
+            R.navigation.category_nav
+        }
         return binding.root
     }
 }
