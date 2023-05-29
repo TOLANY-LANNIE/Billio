@@ -5,8 +5,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import com.thulani.billio.databinding.ActivityBillioBinding
 import com.thulani.billio.fragments.balance.BalanceFragment
 import com.thulani.billio.fragments.calendar.CalendarFragment
 import com.thulani.billio.fragments.home.HomeFragment
@@ -16,9 +20,18 @@ import com.thulani.billio.fragments.reports.ReportFragment
 
 class BillioActivity : AppCompatActivity() {
 
+    private lateinit var binding:ActivityBillioBinding
+
+    private lateinit var navController:NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_billio)
+        binding =ActivityBillioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        navController = findNavController(R.id.category_nav)
+
+        setupActionBarWithNavController(navController)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNav)
         //fragments call
@@ -41,6 +54,10 @@ class BillioActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp()||super.onSupportNavigateUp()
     }
     private fun replaceFragment(fragment: Fragment){
         val transaction =supportFragmentManager.beginTransaction()
