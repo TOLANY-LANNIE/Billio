@@ -48,7 +48,7 @@ class BillioActivity : AppCompatActivity() {
                 R.id.calendar -> replaceFragment(calendar)
                 R.id.balance -> replaceFragment(balance)
                 R.id.report -> replaceFragment(report)
-                R.id.profile -> replaceFragment(profile)
+                R.id.menu -> replaceFragment(profile)
 
             }
             true
