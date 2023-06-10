@@ -8,11 +8,14 @@ import java.util.Date
 
 @Entity(tableName = "bills_table")
 data class Bills(
-    @PrimaryKey @ColumnInfo(name ="uid")val bid: Int,
-    @NonNull @ColumnInfo(name = "bill_name") val name: String,
-    @NonNull @ColumnInfo(name = "amount") val amount: Double,
-    @NonNull @ColumnInfo(name = "due_date") val date: Date,
-    @NonNull @ColumnInfo(name = "status") val status: String,
-    @NonNull @ColumnInfo(name = "category") val category: String,
-    @NonNull @ColumnInfo(name = "user_id") val uid: String
-)
+    @NonNull @ColumnInfo(name = "bill_description") var name: String,
+    @NonNull @ColumnInfo(name = "amount") var amount: Double,
+    @NonNull @ColumnInfo(name = "due_date") var date: Date,
+    @NonNull @ColumnInfo(name = "status") var status: String,
+    @NonNull @ColumnInfo(name = "categoryID") var categoryID: Int,
+    @NonNull @ColumnInfo(name = "user_id") var uid: Int
+){
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name ="bid")
+    var bid: Int?=null
+}

@@ -7,7 +7,11 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "categories_table")
 data class Categories(
-    @PrimaryKey @ColumnInfo(name ="cid")val id: Int,
-    @NonNull @ColumnInfo(name = "category_name") val name: String,
-    @NonNull @ColumnInfo(name = "uEmail") val uEmail: String
-)
+    @NonNull @ColumnInfo(name = "category_name") var name: String,
+    @NonNull @ColumnInfo(name = "userID") var userID:Int,
+    @NonNull @ColumnInfo(name ="amount") var amount:Double
+){
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name ="cid")
+    var cid: Int?=null
+}

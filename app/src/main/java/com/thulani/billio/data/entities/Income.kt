@@ -8,9 +8,12 @@ import java.util.Date
 
 @Entity(tableName = "income_table")
 data class Income(
-    @PrimaryKey @ColumnInfo(name ="uid")val bid: Int,
-    @NonNull @ColumnInfo(name = "income_name") val name: String,
-    @NonNull @ColumnInfo(name = "amount") val amount: Double,
-    @NonNull @ColumnInfo(name = "date") val date: Date,
-    @NonNull @ColumnInfo(name = "user_id") val uid: String
-)
+    @NonNull @ColumnInfo(name = "income_description") var name: String,
+    @NonNull @ColumnInfo(name = "amount") var amount: Double,
+    @NonNull @ColumnInfo(name = "date") var date: Date,
+    @NonNull @ColumnInfo(name = "user_id") var userID: Int
+){
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name ="iid")
+    var iid: Int?=null
+}
