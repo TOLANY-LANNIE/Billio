@@ -6,8 +6,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
 
-@Entity(tableName = "income_table")
+@Entity(tableName = "transaction_table")
 data class Transactions(
+    @NonNull @ColumnInfo(name = "transaction_name") var name: String,
     @NonNull @ColumnInfo(name = "categoryID") var categoryID:Int,
     @NonNull @ColumnInfo(name = "amount") var amount: Double,
     @NonNull @ColumnInfo(name = "date") var date: Date,
