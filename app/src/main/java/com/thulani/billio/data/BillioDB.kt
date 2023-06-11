@@ -4,24 +4,46 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.thulani.billio.data.dao.CategoriesDao
-import com.thulani.billio.data.dao.UserDao
+import com.thulani.billio.data.dao.*
+import com.thulani.billio.data.entities.Bills
 import com.thulani.billio.data.entities.Categories
+import com.thulani.billio.data.entities.Transactions
 import com.thulani.billio.data.entities.User
 
 
 @Database(
-    entities = [User::class,Categories::class],
-    version = 2
+    entities = [User::class,Categories::class,Bills::class,Transactions::class],
+    version = 3
 )
 abstract class BillioDB :RoomDatabase(){
 
-    //users
+    //1.users
     abstract fun getUserDao(): UserDao
 
-    //categories
+    //2.categories
     abstract fun getCategoriesDao():CategoriesDao
 
+    //3.bills
+    abstract fun getBillsDao():BillsDao
+
+    //4.transactions
+    abstract fun getTransactionsDao():TransactionsDao
+
+    //5.transaction-user intermediate dao
+    abstract fun getTransUserDao():TransactionUserDao
+
+    //6.transaction-category intermediate dao
+    abstract fun getTansCategoryDao():TransactionCategoryDao
+
+
+    //7.bill-user intermediate dao
+    abstract fun getBillUserDao():BillUserDao
+
+    //8.bill-category intermediate dao
+    abstract fun getBillCategoryDao():BillCategoryDao
+
+    //9.user-category intermediate dao
+    abstract fun getUserCategoryDao():CategoryUserDao
 
     companion object {
         @Volatile
