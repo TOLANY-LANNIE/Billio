@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,10 +29,6 @@ class BillioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =ActivityBillioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        navController = findNavController(R.id.category_nav)
-
-        setupActionBarWithNavController(navController)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNav)
         //fragments call
@@ -56,9 +53,6 @@ class BillioActivity : AppCompatActivity() {
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return super.onSupportNavigateUp()||super.onSupportNavigateUp()
-    }
     private fun replaceFragment(fragment: Fragment){
         val transaction =supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container_fragment,fragment)

@@ -25,7 +25,7 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val currentCategoryItem = categories[position]
         holder.textCatName.text = currentCategoryItem.name
-        holder.textCatEmail.text = currentCategoryItem.uEmail
+        holder.textCatEmail.text = currentCategoryItem.userID.toString()
     }
 
     override fun getItemCount(): Int {

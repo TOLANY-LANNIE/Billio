@@ -4,17 +4,22 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.thulani.billio.data.dao.*
 import com.thulani.billio.data.entities.Bills
 import com.thulani.billio.data.entities.Categories
 import com.thulani.billio.data.entities.Transactions
 import com.thulani.billio.data.entities.User
+import com.thulani.billio.util.Converters
 
 
 @Database(
     entities = [User::class,Categories::class,Bills::class,Transactions::class],
-    version = 3
+    version = 3,
+    exportSchema = false
 )
+@TypeConverters(Converters::class)
+
 abstract class BillioDB :RoomDatabase(){
 
     //1.users
@@ -56,6 +61,7 @@ abstract class BillioDB :RoomDatabase(){
             Room.databaseBuilder(context.applicationContext,
            BillioDB::class.java,
             "billiodb.db")
+                .fallbackToDestructiveMigration()
                 .build()
     }
 }
