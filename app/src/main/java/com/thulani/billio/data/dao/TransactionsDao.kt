@@ -20,5 +20,5 @@ interface TransactionsDao {
     fun getAll():LiveData<List<Transactions>>
 
     @Query("SELECT * FROM transaction_table WHERE transaction_name =:transactionName")
-    fun searchTransaction(transactionName:String)
+    fun searchTransaction(transactionName:String):Transactions?
 }
