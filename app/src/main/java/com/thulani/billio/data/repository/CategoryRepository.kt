@@ -13,6 +13,8 @@ class CategoryRepository(
 
     fun getAllCategories() = database.getCategoriesDao().getAll()
 
+    fun getAllCategoriesByUser()= database.getUserCategoryDao().loadUserAndCategoryNames()
+
 
     suspend fun selectedCategory(categoryName:String):Categories?{
         return database.getCategoriesDao().getSelectedCat(categoryName)
