@@ -16,5 +16,5 @@ interface BillsDao {
     fun delete(bills: Bills)
 
     @Query("SELECT * FROM bills_table WHERE bill_description =:billName")
-    fun searchBill(billName:String)
+    fun searchBill(billName:String):Bills?
 }
