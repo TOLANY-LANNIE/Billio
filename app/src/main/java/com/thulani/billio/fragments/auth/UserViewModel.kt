@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 class UserViewModel(
     private val repository: UserRepository
 ):ViewModel() {
+
     var userDetails:User? = null
 
     val coroutineScope = CoroutineScope(Dispatchers.IO)

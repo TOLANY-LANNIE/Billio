@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.thulani.billio.R
 import com.thulani.billio.adapters.CategoryAdapter
@@ -42,7 +43,7 @@ class CategoriesFragment : Fragment() {
 
 
         binding.categoryFab.setOnClickListener {
-            R.navigation.category_nav
+            findNavController().navigate(R.id.action_categoriesFragment_to_categoryDetailsFragment)
         }
         return binding.root
     }

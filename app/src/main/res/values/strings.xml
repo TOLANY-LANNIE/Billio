@@ -42,4 +42,5 @@
     <string name="my_profile">My Profile</string>
     <string name="enter_category_name">Enter Category Name</string>
     <string name="menu">Menu</string>
+    <string name="enter_amount">Enter Amount</string>
 </resources>

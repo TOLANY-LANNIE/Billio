@@ -18,6 +18,14 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
         <TextView
+            android:id="@+id/categoryAmountHint"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Amount:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+        <TextView
             android:id="@+id/categoryEmailHint"
             android:layout_width="200dp"
             android:layout_height="wrap_content"

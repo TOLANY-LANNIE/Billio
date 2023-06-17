@@ -37,7 +37,6 @@
             android:exported="false"
             android:theme="@style/Theme.Billio.2">
 
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

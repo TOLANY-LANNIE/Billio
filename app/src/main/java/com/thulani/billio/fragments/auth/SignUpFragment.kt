@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.thulani.billio.R
 import com.thulani.billio.data.BillioDB
@@ -19,6 +20,7 @@ import com.thulani.billio.util.LoginInt
 class SignUpFragment: Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
