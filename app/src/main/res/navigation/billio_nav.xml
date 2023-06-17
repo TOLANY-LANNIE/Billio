@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/billio_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.thulani.billio.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/balanceFragment"
+        android:name="com.thulani.billio.fragments.balance.BalanceFragment"
+        android:label="fragment_balance"
+        tools:layout="@layout/fragment_balance" />
+    <fragment
+        android:id="@+id/billsFragment"
+        android:name="com.thulani.billio.fragments.bills.BillsFragment"
+        android:label="fragment_bills"
+        tools:layout="@layout/fragment_bills" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.thulani.billio.fragments.calendar.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/categoriesFragment2"
+        android:name="com.thulani.billio.fragments.categories.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/categoryDetailsFragment2"
+        android:name="com.thulani.billio.fragments.categories.CategoryDetailsFragment"
+        android:label="fragment_category_details"
+        tools:layout="@layout/fragment_category_details" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.thulani.billio.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.thulani.billio.fragments.reports.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+</navigation>

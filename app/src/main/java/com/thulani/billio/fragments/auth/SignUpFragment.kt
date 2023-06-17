@@ -43,14 +43,16 @@ class SignUpFragment: Fragment() {
             if(name.isEmpty()||surname.isEmpty()||email.isEmpty()||password.isEmpty()){
                 Toast.makeText(context,"Fill all fields", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
+            }else{
+                val userItem = User(name,surname,email,password)
+                viewModel.upsert(userItem)
+                Toast.makeText(context,"User account created successfully", Toast.LENGTH_LONG).show()
+                binding.nameTF.editText?.setText("")
+                binding.surnameTF.editText?.setText("")
+                binding.emailTF.editText?.setText("")
+                binding.passwordTF.editText?.setText("")
             }
-            val userItem = User(name,surname,email,password)
-            viewModel.upsert(userItem)
-            Toast.makeText(context,"User account created successfully", Toast.LENGTH_LONG).show()
-            binding.nameTF.editText?.setText("")
-            binding.surnameTF.editText?.setText("")
-            binding.emailTF.editText?.setText("")
-            binding.passwordTF.editText?.setText("")
+
         }
 
 

@@ -1,16 +1,14 @@
 package com.thulani.billio
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import com.thulani.billio.databinding.ActivityBillioBinding
 import com.thulani.billio.fragments.balance.BalanceFragment
 import com.thulani.billio.fragments.calendar.CalendarFragment
@@ -30,10 +28,8 @@ class BillioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =ActivityBillioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        navController = findNavController(R.id.container_fragment)
-
-        setupActionBarWithNavController(navController)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNav)
         //fragments call

@@ -35,6 +35,8 @@ class LoginFragment: Fragment(){
         val factory = UserViewModelFactory(repository )
         val viewModel = ViewModelProvider(this,factory)[UserViewModel::class.java]
 
+
+
         binding.buttonLogin.setOnClickListener {
             var email = "${binding.usernameTextField.editText?.text}"
             var password= "${binding.passwordTextField.editText?.text}"

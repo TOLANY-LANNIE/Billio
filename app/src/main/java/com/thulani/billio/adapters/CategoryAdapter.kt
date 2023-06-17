@@ -25,6 +25,7 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val currentCategoryItem = categories[position]
         holder.textCatName.text = currentCategoryItem.name
+        holder.textCatAmount.text =currentCategoryItem.amount.toString()
         holder.textCatEmail.text = currentCategoryItem.userID.toString()
     }
 
@@ -32,8 +33,9 @@ class CategoryAdapter(
         return categories.size
     }
     inner class CategoryViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
-        val textCatName:TextView = itemView.findViewById(R.id.categoryNameTF)
-        val textCatEmail:TextView = itemView.findViewById(R.id.categoryEmailTF)
+        val textCatName:TextView = itemView.findViewById(R.id.categoryNameHint)
+        val textCatAmount:TextView = itemView.findViewById(R.id.categoryAmountHint)
+        val textCatEmail:TextView= itemView.findViewById(R.id.categoryEmailHint)
 
     }
 }
