@@ -18,4 +18,5 @@ interface UserDao {
 
     @Query("SELECT * FROM users_table WHERE email =:username AND password =:password")
     fun login(username: String, password:String): User?
+
 }

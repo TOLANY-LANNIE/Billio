@@ -21,6 +21,8 @@ class CategoriesViewModel(
 
     fun getAllCategories() = repository.getAllCategories()
 
+    fun getCategoriesByUser() = repository.getAllCategoriesByUser()
+
     fun selectedCategory(categoryName:String){
         coroutineScope.launch {
             val category = repository.selectedCategory(categoryName)

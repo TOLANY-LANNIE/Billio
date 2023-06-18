@@ -2,6 +2,7 @@ package com.thulani.billio.data.repository
 
 import com.thulani.billio.data.BillioDB
 import com.thulani.billio.data.entities.Categories
+import com.thulani.billio.data.entities.User
 
 class CategoryRepository(
     private val database:BillioDB

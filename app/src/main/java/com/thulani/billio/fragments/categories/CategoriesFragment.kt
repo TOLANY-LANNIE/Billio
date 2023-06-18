@@ -1,6 +1,7 @@
 package com.thulani.billio.fragments.categories
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,11 @@ class CategoriesFragment : Fragment() {
     private var _binding: FragmentCategoriesBinding? = null
     private val binding get() = _binding!!
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,20 +46,14 @@ class CategoriesFragment : Fragment() {
         val factory = CategoriesViewModelFactory(repository )
         val viewModel = ViewModelProvider(this,factory)[CategoriesViewModel::class.java]
 
-        //val repository = UserRepository(database)
-        //val factory = UserViewModelFactory(repository )
-        //val viewModel = ViewModelProvider(this,factory)[UserViewModel::class.java]
-
-        //val userItemAdapter = UserItemAdapter(listOf(),viewModel)
-
         val categoryAdapter = CategoryAdapter(listOf(),viewModel)
-
 
         binding.categoryListRV.layoutManager =LinearLayoutManager(activity)
         binding.categoryListRV.adapter = categoryAdapter
 
         viewModel.getAllCategories().observe(viewLifecycleOwner, Observer {
             categoryAdapter.categories =it
+            Log.i("categoryList","${it.toString()}")
             categoryAdapter.notifyDataSetChanged()
         })
 

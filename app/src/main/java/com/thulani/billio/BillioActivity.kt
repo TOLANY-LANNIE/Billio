@@ -1,13 +1,11 @@
 package com.thulani.billio
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.thulani.billio.databinding.ActivityBillioBinding
 import com.thulani.billio.fragments.balance.BalanceFragment
@@ -43,7 +41,7 @@ class BillioActivity : AppCompatActivity() {
         replaceFragment(category)
         bottomNavigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
-                R.id.home -> replaceFragment(home)
+                R.id.home -> replaceFragment(category)
                 R.id.calendar -> replaceFragment(calendar)
                 R.id.balance -> replaceFragment(balance)
                 R.id.report -> replaceFragment(report)
