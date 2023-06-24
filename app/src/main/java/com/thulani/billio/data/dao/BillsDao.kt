@@ -1,12 +1,13 @@
 package com.thulani.billio.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.thulani.billio.data.entities.Bills
 
 @Dao
 interface BillsDao {
     @Query("SELECT * FROM bills_table")
-    fun getAll(): List<Bills>
+    fun getAll(): LiveData<List<Bills>>
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -43,4 +43,8 @@
     <string name="enter_category_name">Enter Category Name</string>
     <string name="menu">Menu</string>
     <string name="enter_amount">Enter Amount</string>
+    <string name="enter_bill_description">Enter Bill Description</string>
+    <string name="due_date">Due Date</string>
+    <string name="bill_status">Bill Status</string>
+    <string name="bill_category">Bill Category</string>
 </resources>

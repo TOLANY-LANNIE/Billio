@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.thulani.billio.R
 import com.thulani.billio.adapters.BillAdapter
 import com.thulani.billio.data.BillioDB
@@ -23,7 +26,7 @@ class BillsFragment : Fragment() {
        _binding =FragmentBillsBinding.inflate(inflater, container, false)
 
         //linked fragments
-
+        val billFragmentBillsDetails = BillDetailsFragment()
         //db connection
         val application = requireNotNull(this.activity).application
         val database = BillioDB.invoke(application)
@@ -34,6 +37,24 @@ class BillsFragment : Fragment() {
         //link to adapter
         val billsAdapter = BillAdapter(listOf(),viewModel)
 
+        binding.billListRV.layoutManager =LinearLayoutManager(activity)
+        binding.billListRV.adapter =billsAdapter
+
+        viewModel.getAllBills().observe(viewLifecycleOwner, Observer{
+            billsAdapter.bills =it
+            billsAdapter.notifyDataSetChanged()
+        })
+
+        binding.billFab.setOnClickListener {
+            //Toast.makeText(context,"Bill Fab clicked", Toast.LENGTH_LONG).show()
+            replaceFragment(billFragmentBillsDetails)
+        }
         return binding.root
+    }
+    private fun replaceFragment(fragment: Fragment){
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container_fragment,fragment)
+        transaction.commit()
+
     }
 }

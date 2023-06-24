@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.thulani.billio.databinding.ActivityBillioBinding
 import com.thulani.billio.fragments.balance.BalanceFragment
+import com.thulani.billio.fragments.bills.BillsFragment
 import com.thulani.billio.fragments.calendar.CalendarFragment
 import com.thulani.billio.fragments.categories.CategoriesFragment
 import com.thulani.billio.fragments.home.HomeFragment
@@ -37,12 +38,12 @@ class BillioActivity : AppCompatActivity() {
         val report = ReportFragment()
         val profile = ProfileFragment()
         val category = CategoriesFragment()
-
+        val bills = BillsFragment()
         replaceFragment(category)
         bottomNavigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
                 R.id.home -> replaceFragment(category)
-                R.id.calendar -> replaceFragment(calendar)
+                R.id.calendar -> replaceFragment(bills)
                 R.id.balance -> replaceFragment(balance)
                 R.id.report -> replaceFragment(report)
                 R.id.menu -> replaceFragment(profile)
