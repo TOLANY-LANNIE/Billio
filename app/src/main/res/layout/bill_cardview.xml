@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    app:cardCornerRadius="@dimen/cardview_compat_inset_shadow"
+    android:layout_marginBottom="4dp"
+    style="?attr/materialCardViewElevatedStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/billName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Bill Name:"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/billAmount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Amount:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/billDueDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Due Date:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/billStatus"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Bill Status:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/billCategory"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Bill Category:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/billEmail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>
