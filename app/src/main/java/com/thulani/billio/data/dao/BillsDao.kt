@@ -18,4 +18,8 @@ interface BillsDao {
 
     @Query("SELECT * FROM bills_table WHERE bill_description =:billName")
     fun searchBill(billName:String):Bills?
+
+
+    @Query("SELECT * FROM bills_table ORDER BY bid DESC LIMIT 5")
+    fun getLastFiveBills():LiveData<List<Bills>>
 }
