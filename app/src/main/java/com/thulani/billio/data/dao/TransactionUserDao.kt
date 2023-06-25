@@ -11,5 +11,5 @@ import com.thulani.billio.data.entities.User
 interface TransactionUserDao {
     @Query("SELECT * FROM users_table "+
             "JOIN transaction_table ON users_table.uid = transaction_table.user_id")
-    fun loadUserAndTransactionNames(): Map<User, List<Transactions>>
+    fun loadUserAndTransactionNames(userID:Int): Map<User, List<Transactions>>
 }

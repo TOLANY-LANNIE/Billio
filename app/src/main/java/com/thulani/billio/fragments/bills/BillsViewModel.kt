@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class BillsViewModel(
  private val repository: BillRepository
 ):ViewModel(){
-    val coroutineScope = CoroutineScope(Dispatchers.IO)
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
 
     fun upsert(bills:Bills)= coroutineScope.launch {

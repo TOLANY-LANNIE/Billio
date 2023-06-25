@@ -18,8 +18,8 @@ class TransactionRepository(
     fun getAllTransactionsByCategory()=
         database.getTansCategoryDao().loadTransactionByCategoryNames()
 
-    fun getAllTransactionByUser()=
-        database.getTransUserDao().loadUserAndTransactionNames()
+    suspend fun getAllTransactionByUser(userID:Int)=
+        database.getTransUserDao().loadUserAndTransactionNames(userID)
 
    suspend fun searchTransactions(transactionName:String):Transactions?{
         return database.getTransactionsDao().searchTransaction(transactionName)

@@ -11,6 +11,19 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
+
+    <!--Primary Color-->
     <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!--Lighter Shade-->
+    <color name="teal_light">#FF7BD4BF</color>
+    <!--Darker shade-->
+    <color name="teal_dark"> #FF018775</color>
+    <!--Accent color 1-->
+    <color name="teal_accent_1"> #FFF49F53</color>
+    <!--Accent color 2-->
+    <color name="teal_accent_2">#FFADFF00</color>
+
+    <!--Neutral color-->
+    <color name="teal_neutral">#FFEFEFEF</color>
+
 </resources>

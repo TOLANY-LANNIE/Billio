@@ -12,7 +12,6 @@ data class Transactions(
     @NonNull @ColumnInfo(name = "categoryID") var categoryID:Int,
     @NonNull @ColumnInfo(name = "amount") var amount: Double,
     @NonNull @ColumnInfo(name = "date") var date: Date,
-    @NonNull @ColumnInfo(name = "type") var type: String,
     @NonNull @ColumnInfo(name = "user_id") var userID: Int
 )
 {

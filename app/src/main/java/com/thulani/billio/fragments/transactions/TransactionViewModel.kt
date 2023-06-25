@@ -24,7 +24,9 @@ class TransactionViewModel(
 
     fun getAllTransactionsByCategory()=repository.getAllTransactionsByCategory()
 
-    fun getAllTransactionsByUser() =repository.getAllTransactionByUser()
+    fun getAllTransactionsByUser(userID:Int)=coroutineScope.launch {
+        repository.getAllTransactionByUser(userID)
+    }
 
     fun searchTransaction(transactionName:String) =coroutineScope.launch {
         repository.searchTransactions(transactionName)

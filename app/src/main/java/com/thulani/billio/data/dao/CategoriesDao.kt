@@ -10,7 +10,7 @@ interface CategoriesDao {
     @Query("SELECT * FROM categories_table")
     fun getAll(): LiveData<List<Categories>>
 
-    @Query("SELECT * FROM categories_table WHERE category_name =:catName")
+    @Query("SELECT * FROM categories_table WHERE category_name LIKE:catName")
     fun getSelectedCat(catName:String):Categories?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

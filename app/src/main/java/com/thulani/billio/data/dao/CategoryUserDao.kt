@@ -7,8 +7,8 @@ import com.thulani.billio.data.entities.User
 
 @Dao
 interface CategoryUserDao {
-    @Query("SELECT * FROM users_table "+
-            "JOIN categories_table ON users_table.uid = categories_table.userId")
+    @Query("SELECT * FROM categories_table "+
+            "JOIN users_table ON users_table.uid = categories_table.userId")
     fun loadUserAndCategoryNames(): Map<User, List<Categories>>
 
 }
