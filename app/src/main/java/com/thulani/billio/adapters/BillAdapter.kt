@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.thulani.billio.R
 import com.thulani.billio.data.entities.Bills
 import com.thulani.billio.fragments.bills.BillsViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BillAdapter(
     var bills:List<Bills>,
@@ -24,7 +26,9 @@ class BillAdapter(
         val currentBill = bills[position]
         holder.textBillDesc.text = currentBill.name
         holder.textBillAmount.text = currentBill.amount.toString()
-        holder.textBillDueDate.text = currentBill.date.toString()
+        val currentDate =  currentBill.date
+        val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+        holder.textBillDueDate.text = dateFormat.format(currentDate).toString()
         holder.textBillsStatus.text =currentBill.status
         holder.textBilLCategory.text =currentBill.categoryID.toString()
         holder.textBillUser.text =currentBill.uid.toString()

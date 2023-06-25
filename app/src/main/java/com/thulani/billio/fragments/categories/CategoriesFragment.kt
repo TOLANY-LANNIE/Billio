@@ -2,11 +2,10 @@ package com.thulani.billio.fragments.categories
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -25,11 +24,6 @@ class CategoriesFragment : Fragment() {
     private var _binding: FragmentCategoriesBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,6 +31,10 @@ class CategoriesFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
 
+        setHasOptionsMenu(true)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(false) // Remove the back button
+        }
         //fragments
         val categoryDetails = CategoryDetailsFragment()
 
@@ -64,6 +62,17 @@ class CategoriesFragment : Fragment() {
         }
         return binding.root
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu.clear() // Clear the options menu items
+    }
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Billio" // Set the desired title for the toolbar
+        }
+    }
+
     private fun replaceFragment(fragment: Fragment){
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container_fragment,fragment)

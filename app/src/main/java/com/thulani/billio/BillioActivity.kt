@@ -3,6 +3,7 @@ package com.thulani.billio
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -30,6 +31,10 @@ class BillioActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
+        //tool bar
+        val toolbar = findViewById<Toolbar>(R.id.topAppBar)
+        setSupportActionBar(toolbar)
+
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNav)
         //fragments call
         val home = HomeFragment()
@@ -55,7 +60,8 @@ class BillioActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()||super.onSupportNavigateUp()
+        onBackPressed()
+        return true
     }
 
     private fun replaceFragment(fragment: Fragment){
