@@ -42,12 +42,12 @@ class BillioActivity : AppCompatActivity() {
         val balance =BalanceFragment()
         val report = ReportFragment()
         val profile = ProfileFragment()
-        val category = CategoriesFragment()
+        //val category = CategoriesFragment()
         val bills = BillsFragment()
-        replaceFragment(category)
+        replaceFragment(bills)
         bottomNavigation.setOnNavigationItemSelectedListener{
             when(it.itemId){
-                R.id.home -> replaceFragment(category)
+               // R.id.home -> replaceFragment(category)
                 R.id.calendar -> replaceFragment(bills)
                 R.id.balance -> replaceFragment(balance)
                 R.id.report -> replaceFragment(report)

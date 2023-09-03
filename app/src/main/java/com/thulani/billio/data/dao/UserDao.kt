@@ -17,6 +17,6 @@ interface UserDao {
     fun getAll(): LiveData<List<User>>
 
     @Query("SELECT * FROM users_table WHERE email LIKE:username AND password LIKE :password")
-    fun login(username: String, password:String): User?
+    fun login(username:String, password:String): User?
 
 }

@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.thulani.billio.adapters.TransactionAdapter
 import com.thulani.billio.data.BillioDB
 import com.thulani.billio.data.repository.TransactionRepository
 import com.thulani.billio.databinding.FragmentTransactionBinding
@@ -38,6 +40,11 @@ class TransactionFragment : Fragment() {
         val factory = TransactionViewModelFactory(repository)
         val viewModel = ViewModelProvider(this,factory)[TransactionViewModel::class.java]
 
+
+        //link adapter
+        val transactionAdapter = TransactionAdapter(listOf(),viewModel)
+
+        binding.transactionListRV.layoutManager =LinearLayoutManager(activity)
 
         return binding.root
     }

@@ -45,7 +45,7 @@ class BillDetailsFragment : Fragment() {
             var billDesc = "${binding.billDescTF.editText?.text}"
             var billAmount ="${binding.billAmountTF.editText?.text}"
             var billDueDate ="${binding.billDueDateTF.editText?.text}"
-            val billStatus = "${binding.billStatusTF.editText?.text}"
+            var billStatus = "${binding.billStatusTF.editText?.text}"
             var billCategory="${binding.billCategoryTF.editText?.text}"
             var billUserID ="${binding.billUserTF.editText?.text}"
             val userID ="1"
@@ -57,7 +57,14 @@ class BillDetailsFragment : Fragment() {
                 Toast.makeText(context,"Fill out all fields", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }else{
-                val billItem = Bills(billDesc,billAmount.toDouble(),currentDate,billStatus,billCategory.toInt(),userID.toInt())
+                val billItem = Bills(
+                    billDesc,
+                    billAmount.toDouble(),
+                    currentDate,
+                    billStatus,
+                    billCategory.toInt(),
+                    userID.toInt()
+                )
                 viewModel.upsert(billItem)
                 Toast.makeText(context,"Bill created successfully", Toast.LENGTH_LONG).show()
                 binding.billDescTF.editText?.setText("")
